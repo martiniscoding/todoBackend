@@ -3,9 +3,13 @@ const app = express()
 app.use(express.json())
 const cors = require("cors")
 app.use(cors({
-    origin: 'https://end-rho.vercel.app/',
-   credentials: true
-}))
+    origin: 'https://end-rho.vercel.app',
+    credentials: true,
+    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+app.options('*', cors());
+
 const cookieparser = require("cookie-parser")
 app.use(cookieparser())
 app.use(express.urlencoded())
