@@ -1,6 +1,6 @@
+require('dotenv').config();
 const express = require("express")
 const app = express()
-app.use(express.json())
 const cors = require("cors")
 app.use(cors({
     origin: 'https://end-rho.vercel.app',
@@ -23,8 +23,8 @@ app.use("/api", router)
 connectDB()
 
 
-
-app.listen(3000, function(){
+const port = process.env.PORT || 3000;
+app.listen(port, function(){
     console.log(`server started `);
     
 })

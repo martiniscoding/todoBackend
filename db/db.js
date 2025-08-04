@@ -1,9 +1,10 @@
 const mongoose = require("mongoose")
+const mongUrl= process.env.MONG
 
 async function connectDB(){
     try{
 
-        const ans = await mongoose.connect("mongodb+srv://sk4251867:HpEPML1NwPcesx06@cluster0.wdfqfhh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+        const ans = await mongoose.connect(mongUrl)
         if(ans){
             console.log("connected to databse ")
         }
