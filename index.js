@@ -8,7 +8,7 @@ app.use(cors({
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
-app.options('*', cors());
+
 
 const cookieparser = require("cookie-parser")
 app.use(cookieparser())
