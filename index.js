@@ -3,7 +3,7 @@ const express = require("express")
 const app = express()
 const cors = require("cors")
 app.use(cors({
-    origin: 'https://end-rho.vercel.app',
+    origin: 'http://localhost:5173',
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
