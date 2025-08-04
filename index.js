@@ -4,7 +4,7 @@ const app = express()
 app.use(express.json())
 const cors = require("cors")
 app.use(cors({
-    origin: 'https://todoflex-rho.vercel.app/',
+    origin: 'https://todoflex-rho.vercel.app',
     credentials: true,
     methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
