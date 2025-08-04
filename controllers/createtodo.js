@@ -146,7 +146,12 @@ async function Login(req,res){
         email:ans.email,
         username: ans.username
      }, "key", { expiresIn:"24h" });
-     res.status(200).cookie("token" , token , { maxAge: 24*60*60*1000 }).json({
+     res.status(200).cookie("token" , token , { 
+         maxAge: 24*60*60*1000,
+          httpOnly: true,
+         secure: true, // must be true for https in production
+          sameSite: "none",
+     }).json({
         success: true,
         msg:`welcome back ${ans.username}`
      })
